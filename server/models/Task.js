@@ -12,6 +12,14 @@ const taskSchema = new mongoose.Schema({
     type: String, 
     enum: ['low', 'medium', 'high'], 
     default: 'medium' 
+  },  
+  dueDate: { // ✅ NEW FIELD
+    type: Date,
+    required: false
+  },
+  completedAt: {           // <-- Add this field
+    type: Date,
+    default: null
   },
   userId: { 
     type: mongoose.Schema.Types.ObjectId, 
